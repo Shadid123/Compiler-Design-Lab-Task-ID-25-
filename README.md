@@ -77,6 +77,52 @@ int main() {
 }
 ```
 
+## Sample output
+
+Running `./lexer sample.c` on the sample above produces a token-per-line output similar to:
+
+```
+Keyword "int"  at 1:1
+Identifier "main"  at 1:5
+Delimiter "("  at 1:9
+Delimiter ")"  at 1:10
+Delimiter "{"  at 1:12
+Comment "// single-line comment"  at 2:3
+Keyword "float"  at 3:3
+Identifier "x"  at 3:9
+Operator "="  at 3:11
+Float "3.14"  at 3:13
+Delimiter ";"  at 3:17
+Keyword "int"  at 4:3
+Identifier "i"  at 4:7
+Operator "="  at 4:9
+Integer "0"  at 4:11
+Delimiter ";"  at 4:12
+Keyword "if"  at 5:3
+Delimiter "("  at 5:6
+Identifier "x"  at 5:7
+Operator ">"  at 5:9
+Integer "0"  at 5:11
+Delimiter ")"  at 5:12
+Identifier "x"  at 5:14
+Operator "+="  at 5:16
+Integer "1"  at 5:19
+Delimiter ";"  at 5:20
+Comment "/* block\n     comment */"  at 6:3
+Identifier "printf"  at 8:3
+Delimiter "("  at 8:10
+String "\"Hello, \\\"world\\\"!\\n\""  at 8:11
+Delimiter ")"  at 8:34
+Delimiter ";"  at 8:35
+Keyword "return"  at 9:3
+Integer "0"  at 9:10
+Delimiter ";"  at 9:11
+Delimiter "}"  at 10:1
+[EOF] at 10:2
+```
+
+Note: exact column numbers may vary slightly depending on how tabs/spaces are counted in the input file.
+
 ## Token types recognized
 
 - Keyword
