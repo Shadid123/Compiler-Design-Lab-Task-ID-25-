@@ -77,28 +77,10 @@ int main() {
 }
 ```
 
-## Sample output (default)
 
-Running `./lexer sample.c` on the sample above produces a token-per-line output similar to:
+## Sample output
 
-```
-Keyword "int"  at 1:1
-Identifier "main"  at 1:5
-Delimiter ")"  at 1:10
-Delimiter "{"  at 1:12
-Comment "// single-line comment"  at 2:3
-Keyword "float"  at 3:3
-Identifier "x"  at 3:9
-Operator "="  at 3:11
-Float "3.14"  at 3:13
-Delimiter ";"  at 3:17
-...
-[EOF] at 10:2
-```
 
-## Desired output format (your requested style)
-
-You asked for the output to be formatted like this (lexeme --> TokenType), for example:
 
 ```
 This --> Identifier  
@@ -118,27 +100,7 @@ b --> Identifier
 ; --> Separator
 ```
 
-Notes about the requested format:
-- The lexeme appears first, then `-->`, then the token type.
-- Token type names in your example: `Identifier`, `Keyword`, `Operator`, `Constant (Integer)`, `Separator`.
-- `Separator` corresponds to what the implementation currently calls `Delimiter`.
-- `Constant (Integer)` corresponds to the current `Integer` token type.
 
-If you want the lexer to produce this exact format instead of the default one in `tokenizer.cpp`, I can update `tokenizer.cpp` to print tokens in this style. For example it would print:
-
-```
-int --> Keyword
-main --> Identifier
-( --> Separator
-) --> Separator
-{ --> Separator
-// comment --> Comment
-...
-```
-
-Tell me if you want me to (choose one):
-- Update `tokenizer.cpp` so the program prints tokens in this requested format (I will commit the change), or
-- Keep the current program and only keep this README note (already done).
 
 ## Token types recognized
 
